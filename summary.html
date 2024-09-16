@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary: Event handlers</title>
+    <style>
+      #display-email {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Explore DOM Events</h1>
+
+    <p id="display-email">Your email is:</p>
+    <input type="text" id="text-input" />
+    <button id="email-submit">Submit</button> <br />
+    <br />
+    <button onclick="makeGreen()">Make green</button>
+    <button id="make-yellow">Make yellow</button>
+    <button id="default-bg">Default Color</button>
+    <input type="text" name="" id="" disabled />
+
+    <script>
+      function makeGreen() {
+        document.body.style.backgroundColor = "green";
+      }
+
+      document
+        .getElementById("make-yellow")
+        .addEventListener("click", function () {
+          document.body.style.backgroundColor = "yellow";
+        });
+
+      document
+        .getElementById("default-bg")
+        .addEventListener("click", function () {
+          document.body.style.backgroundColor = "white";
+        });
+
+      document
+        .getElementById("text-input")
+        .addEventListener("keyup", function (event) {
+          //   console.log(event.target.value);
+        });
+
+      document
+        .getElementById("email-submit")
+        .addEventListener("click", function () {
+          const emailInput = document.getElementById("text-input");
+          const displayEmail = document.getElementById("display-email");
+          displayEmail.style.display = "block";
+          displayEmail.innerText += emailInput.value;
+          if (emailInput.value) {
+            emailInput.setAttribute("disabled", true);
+            emailInput.setAttribute("placeholder", "This input disabled");
+            emailInput.value = "";
+          }
+        });
+    </script>
+  </body>
+</html>
