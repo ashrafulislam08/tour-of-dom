@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+        minima illum dolores unde enim perspiciatis delectus? Doloremque nisi
+        natus, corporis odio commodi consectetur laudantium asperiores magnam,
+        optio, error fugiat itaque!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+        minima illum dolores unde enim perspiciatis delectus? Doloremque nisi
+        natus, corporis odio commodi consectetur laudantium asperiores magnam,
+        optio, error fugiat itaque!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+        minima illum dolores unde enim perspiciatis delectus? Doloremque nisi
+        natus, corporis odio commodi consectetur laudantium asperiores magnam,
+        optio, error fugiat itaque!
+      </p>
+    </div>
+
+    <div>
+      <textarea name="" id="message-box"></textarea> <br />
+      <button id="btn-message">Submit Message</button>
+    </div>
+
+    <script>
+      const container = document.getElementById("container");
+      const messageBox = document.getElementById("message-box");
+      const btnMessage = document.getElementById("btn-message");
+
+      btnMessage.addEventListener("click", function () {
+        const p = document.createElement("p");
+        p.innerText = messageBox.value;
+        container.appendChild(p);
+      });
+    </script>
+  </body>
+</html>
